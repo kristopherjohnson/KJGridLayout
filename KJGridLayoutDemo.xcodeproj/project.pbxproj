@@ -21,6 +21,9 @@
 		4E59AB8E15109F61000291B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6C15109F61000291B3 /* Foundation.framework */; };
 		4E59AB9615109F61000291B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E59AB9415109F61000291B3 /* InfoPlist.strings */; };
 		4E59AB9915109F61000291B3 /* KJGridLayoutDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E59AB9815109F61000291B3 /* KJGridLayoutDemoTests.m */; };
+		4E59ABA415109FC1000291B3 /* KJGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E59ABA315109FC1000291B3 /* KJGridLayout.m */; };
+		4E59ABA515109FC1000291B3 /* KJGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E59ABA315109FC1000291B3 /* KJGridLayout.m */; };
+		4E59ABA61510A0DE000291B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6E15109F61000291B3 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,22 +41,24 @@
 		4E59AB6A15109F61000291B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4E59AB6C15109F61000291B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4E59AB6E15109F61000291B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4E59AB7215109F61000291B3 /* KJGridLayoutDemo-Info.plist */ = {isa = PBXFileReference; path = "KJGridLayoutDemo-Info.plist"; sourceTree = "<group>"; };
+		4E59AB7215109F61000291B3 /* KJGridLayoutDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KJGridLayoutDemo-Info.plist"; sourceTree = "<group>"; };
 		4E59AB7415109F61000291B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E59AB7615109F61000291B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4E59AB7815109F61000291B3 /* KJGridLayoutDemo-Prefix.pch */ = {isa = PBXFileReference; path = "KJGridLayoutDemo-Prefix.pch"; sourceTree = "<group>"; };
-		4E59AB7915109F61000291B3 /* KJAppDelegate.h */ = {isa = PBXFileReference; path = KJAppDelegate.h; sourceTree = "<group>"; };
+		4E59AB7815109F61000291B3 /* KJGridLayoutDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KJGridLayoutDemo-Prefix.pch"; sourceTree = "<group>"; };
+		4E59AB7915109F61000291B3 /* KJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJAppDelegate.h; sourceTree = "<group>"; };
 		4E59AB7A15109F61000291B3 /* KJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJAppDelegate.m; sourceTree = "<group>"; };
-		4E59AB7C15109F61000291B3 /* KJViewController.h */ = {isa = PBXFileReference; path = KJViewController.h; sourceTree = "<group>"; };
+		4E59AB7C15109F61000291B3 /* KJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJViewController.h; sourceTree = "<group>"; };
 		4E59AB7D15109F61000291B3 /* KJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJViewController.m; sourceTree = "<group>"; };
 		4E59AB8015109F61000291B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KJViewController_iPhone.xib; sourceTree = "<group>"; };
 		4E59AB8315109F61000291B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KJViewController_iPad.xib; sourceTree = "<group>"; };
 		4E59AB8A15109F61000291B3 /* KJGridLayoutDemoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KJGridLayoutDemoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E59AB8B15109F61000291B3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		4E59AB9315109F61000291B3 /* KJGridLayoutDemoTests-Info.plist */ = {isa = PBXFileReference; path = "KJGridLayoutDemoTests-Info.plist"; sourceTree = "<group>"; };
+		4E59AB9315109F61000291B3 /* KJGridLayoutDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KJGridLayoutDemoTests-Info.plist"; sourceTree = "<group>"; };
 		4E59AB9515109F61000291B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4E59AB9715109F61000291B3 /* KJGridLayoutDemoTests.h */ = {isa = PBXFileReference; path = KJGridLayoutDemoTests.h; sourceTree = "<group>"; };
+		4E59AB9715109F61000291B3 /* KJGridLayoutDemoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJGridLayoutDemoTests.h; sourceTree = "<group>"; };
 		4E59AB9815109F61000291B3 /* KJGridLayoutDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJGridLayoutDemoTests.m; sourceTree = "<group>"; };
+		4E59ABA215109FC1000291B3 /* KJGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJGridLayout.h; sourceTree = "<group>"; };
+		4E59ABA315109FC1000291B3 /* KJGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJGridLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +79,7 @@
 				4E59AB8C15109F61000291B3 /* SenTestingKit.framework in Frameworks */,
 				4E59AB8D15109F61000291B3 /* UIKit.framework in Frameworks */,
 				4E59AB8E15109F61000291B3 /* Foundation.framework in Frameworks */,
+				4E59ABA61510A0DE000291B3 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +126,8 @@
 				4E59AB7F15109F61000291B3 /* KJViewController_iPhone.xib */,
 				4E59AB8215109F61000291B3 /* KJViewController_iPad.xib */,
 				4E59AB7115109F61000291B3 /* Supporting Files */,
+				4E59ABA215109FC1000291B3 /* KJGridLayout.h */,
+				4E59ABA315109FC1000291B3 /* KJGridLayout.m */,
 			);
 			path = KJGridLayoutDemo;
 			sourceTree = "<group>";
@@ -201,7 +209,7 @@
 			attributes = {
 				CLASSPREFIX = KJ;
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = "Capable Hands Technologies, Inc.";
+				ORGANIZATIONNAME = "Kristopher Johnson";
 			};
 			buildConfigurationList = 4E59AB6015109F61000291B3 /* Build configuration list for PBXProject "KJGridLayoutDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -266,6 +274,7 @@
 				4E59AB7715109F61000291B3 /* main.m in Sources */,
 				4E59AB7B15109F61000291B3 /* KJAppDelegate.m in Sources */,
 				4E59AB7E15109F61000291B3 /* KJViewController.m in Sources */,
+				4E59ABA415109FC1000291B3 /* KJGridLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E59AB9915109F61000291B3 /* KJGridLayoutDemoTests.m in Sources */,
+				4E59ABA515109FC1000291B3 /* KJGridLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +352,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -360,7 +370,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -374,6 +384,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KJGridLayoutDemo/KJGridLayoutDemo-Prefix.pch";
 				INFOPLIST_FILE = "KJGridLayoutDemo/KJGridLayoutDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -385,6 +396,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KJGridLayoutDemo/KJGridLayoutDemo-Prefix.pch";
 				INFOPLIST_FILE = "KJGridLayoutDemo/KJGridLayoutDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

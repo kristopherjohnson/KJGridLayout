@@ -3,7 +3,7 @@
 //  KJGridLayoutDemo
 //
 //  Created by Kristopher Johnson on 3/14/12.
-//  Copyright (c) 2012 Capable Hands Technologies, Inc. All rights reserved.
+//  Copyright (c) 2012 Kristopher Johnson 
 //
 
 #import <UIKit/UIKit.h>
