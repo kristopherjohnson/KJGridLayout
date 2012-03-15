@@ -70,7 +70,7 @@ Use `-removeView:` or `-removeAllViews` if you want to remove views from the lay
         
         // Redo layout during autorotation
         [UIView animateWithDuration:duration animations:^{
-            [gridLayout setBounds:[self layoutBounds]];
+            [gridLayout setBounds:[self.view bounds]];
             [gridLayout layoutViews];        
         }];    
     }
