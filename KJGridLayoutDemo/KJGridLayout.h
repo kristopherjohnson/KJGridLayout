@@ -28,13 +28,16 @@
 enum KJGridLayoutOption {
     KJGridLayoutDefaultOptions = 0,
     
-    // Do not change width of view during layout
+    // Do not change width of view during layout.
+    // Centers the view horizontally within its layout space.
     KJGridLayoutFixedWidth = (1 << 0),
     
-    // Do not change height of view during layout
+    // Do not change height of view during layout.
+    // Centers the view vertically within its layout space.
     KJGridLayoutFixedHeight = (1 << 1),
     
-    // Do not change width or height of view during layout
+    // Do not change width or height of view during layout.
+    // Places the view's center at the center of the layout space.
     KJGridLayoutFixedSize = KJGridLayoutFixedWidth | KJGridLayoutFixedHeight
 };
 
@@ -48,10 +51,10 @@ enum KJGridLayoutOption {
 // Rectangle within which views will be laid out
 @property (nonatomic) CGRect bounds;
 
-// Empty space between adjacent columns
+// Empty space between adjacent columns. Default value is 0.0.
 @property (nonatomic) CGFloat columnSpacing;
 
-// Empty space between rows
+// Empty space between adjacent rows. Default value is 0.0.
 @property (nonatomic) CGFloat rowSpacing;
 
 // Add a view at specified rows and columns with specified layout options
@@ -61,6 +64,10 @@ enum KJGridLayoutOption {
          column:(NSUInteger)columnIndex
      columnSpan:(NSUInteger)columnSpan
         options:(NSUInteger)options;
+
+// The following -addView:... methods are convenience methods that
+// call -addView:row:rowSpan:column:columnSpan:options: with default
+// values for unspecified parameters.
 
 // Add a view at specified row and column
 - (void)addView:(UIView *)view
@@ -101,7 +108,7 @@ enum KJGridLayoutOption {
 // Set the frames of all views according to current layout properties
 - (void)layoutViews;
 
-// Return a collection containing all of the views in this layout
+// Return a collection of the views in this layout
 - (NSArray *)views;
 
 @end
