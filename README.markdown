@@ -1,32 +1,35 @@
 # KJGridLayout
 
-KJGridLayout is a class that acts as a simple grid layout manager for views in an iOS application.
+KJGridLayout is a simple grid layout manager for views in an iOS application.
 
-It can be used in a UIViewController subclass to arrange views, or can be used in the implementation of `-layoutSubviews` in a UIView subclass.
+It can be used in a UIViewController subclass to arrange views, or can be used in the implementation of `-[UIView layoutSubviews]` in a UIView subclass.
 
 ## Basic Usage
 
-To use it in your application, simply copy `KJGridLayout.h` and `KJGridLayout.m` into your project.
+To use it in your application, copy [`KJGridLayout.h`](https://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayoutDemo/KJGridLayout.h) and [`KJGridLayout.m`](https://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayoutDemo/KJGridLayout.m) into your project.
 
 Create an instance of `KJGridLayout` by calling `[[KJGridLayout alloc] init]`.
 
-Then, add views to the layout by invoking `-addView:rowIndex:columnIndex:`.  There are variants of that method that allow specification of `columnSpan` and/or `rowSpan` arguments for elements that span multiple grid cells.
+Then, add views to the layout by calling `-addView:rowIndex:columnIndex:`.  There are variants of that method that allow specification of `columnSpan` and/or `rowSpan` arguments for elements that span multiple grid cells.
 
-Before performing the layout, call `-setBounds:` to set the boundary rectangle for the layout.  You may want to use the view's bounds, or may want a smaller boundary rectangle if the grid only takes up part of the view.
+Before performing the layout, call `-setBounds:` to set the boundary rectangle for the layout.  You may want to use the view's bounds, or you may want a smaller boundary rectangle if the grid only takes up part of the view.
 
 Call `-setColumnSpacing` and `-setRowSpacing` if you want some empty space between the columns and rows.
 
-Finally, call `-layoutViews` to perform the layout operation.  This will set the frames of the views.
+Finally, call `-layoutViews` to perform the layout operation.  This will call `-[UIView setFrame:]` for each view that has been added to the grid layout.  Whenever the size of the superview changes (for example, as the result of an autorotation), you should set the layout's new bounds and then call `-layoutViews` again.
 
-Use `-removeView` or `-removeAllViews` if you want to remove views from the layout.  If you want to change the layout for an element (for example, moving an element from one column to another), you must remove it and then add it back.
+Use `-removeView:` or `-removeAllViews` if you want to remove views from the layout.  If you want to change the layout for an element (for example, moving an element from one column to another), you must remove it and then call one of the `-addView:...` methods to put it in the new place.
 
 ## Simple Example
 
+    // @property (nonatomic, retain) KJGridLayout *gridLayout;
+    @synthesize gridLayout;
+    
     - (void)viewDidLoad {
         [super viewDidLoad];
     
         // Initialize the layout manager
-        KJGridLayout *gridLayout = [[KJGridLayout alloc] init] autorelease];
+        gridLayout = [[KJGridLayout alloc] init] autorelease];
         [gridLayout setColumnSpacing:4];
         [gridLayout setRowSpacing:4];
     
@@ -50,7 +53,29 @@ Use `-removeView` or `-removeAllViews` if you want to remove views from the layo
         [gridLayout layoutViews];
     }
 
-See the included `KJGridLayoutDemo` application for a more involved example.
+    - (void)viewDidUnload {
+        // Release the grid layout to release the retained views
+        self.gridLayout = nil;
+        [super viewDidUnload];
+    }
+    
+    - (void)dealloc {
+        [gridLayout release];
+        [super dealloc];
+    }
+    
+    - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)orientation
+                                             duration:(NSTimeInterval)duration {
+        [super willAnimateRotationToInterfaceOrientation:orientation duration:duration];
+        
+        // Redo layout during autorotation
+        [UIView animateWithDuration:duration animations:^{
+            [gridLayout setBounds:[self layoutBounds]];
+            [gridLayout layoutViews];        
+        }];    
+    }
+
+See the included [`KJGridLayoutDemo`](https://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayoutDemo/KJViewController.m) application for a more complete example.
 
 ## LICENSE
 
