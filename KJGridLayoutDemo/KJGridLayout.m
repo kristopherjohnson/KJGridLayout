@@ -8,13 +8,17 @@
 
 #import "KJGridLayout.h"
 
+// Class used internally by KJGridLayout
+
 @interface KJGridLayoutConstraint : NSObject
 
 @property (nonatomic, retain) UIView *view;
+
 @property (nonatomic) NSUInteger rowIndex;
 @property (nonatomic) NSUInteger rowSpan;
 @property (nonatomic) NSUInteger columnIndex;
 @property (nonatomic) NSUInteger columnSpan;
+@property (nonatomic) NSUInteger options;
 
 @end
 
@@ -25,13 +29,14 @@
 @synthesize rowSpan;
 @synthesize columnIndex;
 @synthesize columnSpan;
+@synthesize options;
 
-- (id)init
-{
+- (id)init {
     self = [super init];
     if (self) {
         rowSpan = 1;
         columnSpan = 1;
+        options = KJGridLayoutDefaultOptions;
     }
     return self;
 }
@@ -63,15 +68,39 @@
 }
 
 - (void)addView:(UIView *)view row:(NSUInteger)rowIndex column:(NSUInteger)columnIndex {
-    [self addView:view row:rowIndex column:columnIndex columnSpan:1];
+    [self addView:view
+              row:rowIndex
+          rowSpan:1
+           column:columnIndex
+       columnSpan:1
+          options:KJGridLayoutDefaultOptions];
+}
+
+- (void)addView:(UIView *)view row:(NSUInteger)rowIndex column:(NSUInteger)columnIndex options:(NSUInteger)options {
+    [self addView:view
+              row:rowIndex
+          rowSpan:1
+           column:columnIndex
+       columnSpan:1
+          options:options];
 }
 
 - (void)addView:(UIView *)view row:(NSUInteger)rowIndex rowSpan:(NSUInteger)rowSpan column:(NSUInteger)columnIndex  {
-    [self addView:view row:rowIndex rowSpan:rowSpan column:columnIndex columnSpan:1];
+    [self addView:view
+              row:rowIndex
+          rowSpan:rowSpan
+           column:columnIndex
+       columnSpan:1
+          options:KJGridLayoutDefaultOptions];
 }
 
 - (void)addView:(UIView *)view row:(NSUInteger)rowIndex column:(NSUInteger)columnIndex columnSpan:(NSUInteger)columnSpan {
-    [self addView:view row:rowIndex rowSpan:1 column:columnIndex columnSpan:columnSpan];  
+    [self addView:view
+              row:rowIndex
+          rowSpan:1
+           column:columnIndex
+       columnSpan:columnSpan
+          options:KJGridLayoutDefaultOptions];  
 }
 
 - (void)addView:(UIView *)view
@@ -80,12 +109,28 @@
          column:(NSUInteger)columnIndex
      columnSpan:(NSUInteger)columnSpan
 {
+    [self addView:view
+              row:rowIndex
+          rowSpan:rowSpan
+           column:columnIndex
+       columnSpan:columnSpan
+          options:KJGridLayoutDefaultOptions];  
+}
+
+- (void)addView:(UIView *)view
+            row:(NSUInteger)rowIndex
+        rowSpan:(NSUInteger)rowSpan
+         column:(NSUInteger)columnIndex
+     columnSpan:(NSUInteger)columnSpan
+        options:(NSUInteger)options
+{
     KJGridLayoutConstraint *constraint = [[KJGridLayoutConstraint alloc] init];
     constraint.view = view;
     constraint.rowIndex = rowIndex;
     constraint.rowSpan = rowSpan;
     constraint.columnIndex = columnIndex;
     constraint.columnSpan = columnSpan;
+    constraint.options = options;
     [constraints addObject:constraint];
     [constraint release];    
 }
@@ -148,14 +193,43 @@
     
     // Set frame of each view
     for (KJGridLayoutConstraint *constraint in constraints) {
+        UIView *view = constraint.view;
+        
+        // Determine rectangle for this view within grid
         CGFloat originX = bounds.origin.x + constraint.columnIndex * columnWidth;
         CGFloat originY = bounds.origin.y + constraint.rowIndex * rowHeight;
         CGFloat width = columnWidth * constraint.columnSpan;
         CGFloat height = rowHeight * constraint.rowSpan;
         
-        CGRect frame = CGRectMake(originX, originY, width, height);
+        // Determine how to fit the view within the rectangle
         
-        [constraint.view setFrame:frame];
+        NSUInteger options = constraint.options;
+        CGRect oldFrame = view.frame;
+        CGRect newFrame;
+                
+        if ((options & KJGridLayoutFixedWidth) != 0) {
+            // Center horizontally, maintaining the original width
+            CGFloat centerX = (originX + width) / 2;
+            newFrame.origin.x = centerX - oldFrame.size.width / 2;
+            newFrame.size.width = oldFrame.size.width;
+        }
+        else {
+            newFrame.origin.x = originX;
+            newFrame.size.width = width;
+        }
+        
+        if ((options & KJGridLayoutFixedHeight) != 0) {
+            // Center vertically, maintaining the original height
+            CGFloat centerY = (originY + height) / 2;
+            newFrame.origin.y = centerY - oldFrame.size.height / 2;
+            newFrame.size.height = oldFrame.size.height;
+        }
+        else {
+            newFrame.origin.y = originY;
+            newFrame.size.height = height;
+        }
+        
+        [view setFrame:newFrame];
     }
 }
 

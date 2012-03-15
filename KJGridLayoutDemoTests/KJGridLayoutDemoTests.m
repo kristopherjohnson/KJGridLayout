@@ -159,4 +159,18 @@
     STAssertEquals(300.f, view2.frame.size.height, nil);
 }
 
+- (void)testFixedSize {
+    [gridLayout setBounds:CGRectMake(0, 0, 300, 400)];
+    
+    UIView *view1 = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)] autorelease];
+    [gridLayout addView:view1 row:0 rowSpan:2 column:0 columnSpan:1 options:KJGridLayoutFixedSize];
+    
+    [gridLayout layoutViews];
+    
+    STAssertEquals(150.f, view1.center.x, nil);
+    STAssertEquals(200.f, view1.center.y, nil);
+    STAssertEquals(10.f, view1.frame.size.width, nil);
+    STAssertEquals(20.f, view1.frame.size.height, nil);
+}
+
 @end

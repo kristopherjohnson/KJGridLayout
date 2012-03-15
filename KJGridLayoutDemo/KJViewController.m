@@ -10,66 +10,99 @@
 
 @implementation KJViewController
 
-@synthesize topLabel;
-@synthesize firstSwitch;
-@synthesize firstSwitchLabel;
-@synthesize secondSwitch;
-@synthesize secondSwitchLabel;
-@synthesize button1;
-@synthesize button2;
-@synthesize button3;
-@synthesize button4;
-@synthesize switchesLeftButton;
-@synthesize switchesRightButton;
-
 @synthesize gridLayout;
+
+- (void)dealloc {
+    [gridLayout release];
+    [super dealloc];
+}
+
+- (UIButton *)buttonInViewWithTitle:(NSString *)title {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setTitle:title forState:UIControlStateNormal];
+    [self.view addSubview:button];
+    return button;
+}
+
+- (void)makeKeypad {
+    UIButton *button;
+    
+    // Create 1-9 keys in 3x3 grid
+    for (NSUInteger i = 0; i < 9; ++i) {
+        NSString *title = [NSString stringWithFormat:@"%u", (unsigned) i + 1];
+        button = [self buttonInViewWithTitle:title];
+        
+        NSUInteger rowIndex = 3 - (i / 3);
+        NSUInteger columnIndex = i % 3;
+        [gridLayout addView:button row:rowIndex column:columnIndex];
+    }
+    
+    // 0 key
+    button = [self buttonInViewWithTitle:@"0"];
+    [gridLayout addView:button row:4 column:0 columnSpan:2];
+    
+    // Decimal
+    button = [self buttonInViewWithTitle:@"."];
+    [gridLayout addView:button row:4 column:2];
+    
+    // Enter
+    button = [self buttonInViewWithTitle:@"Enter"];
+    [gridLayout addView:button row:3 rowSpan:2 column:3];
+    
+    // +
+    button = [self buttonInViewWithTitle:@"+"];
+    [gridLayout addView:button row:2 column:3];
+    
+    // -
+    button = [self buttonInViewWithTitle:@"-"];
+    [gridLayout addView:button row:1 column:3];
+    
+    // *
+    button = [self buttonInViewWithTitle:@"*"];
+    [gridLayout addView:button row:0 column:3];
+    
+    // /
+    button = [self buttonInViewWithTitle:@"/"];
+    [gridLayout addView:button row:0 column:2];
+    
+    // Info text
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.text = @"This app demonstrates use of KJGridLayout";
+    label.numberOfLines = 0;
+    label.lineBreakMode = UILineBreakModeWordWrap;
+    label.textAlignment = UITextAlignmentCenter;
+    label.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:label];
+    [gridLayout addView:label row:0 column:0 columnSpan:2];
+    [label release];
+}
+
+- (CGRect)layoutBounds {
+    CGRect layoutBounds = self.view.bounds;
+    layoutBounds = CGRectInset(layoutBounds, 8, 8);
+    return layoutBounds;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     gridLayout = [[KJGridLayout alloc] init];
     
-    [gridLayout addView:topLabel row:0 column:0 columnSpan:4];
+    [self makeKeypad];
     
-    [gridLayout addView:firstSwitch row:1 column:0];
-    [gridLayout addView:firstSwitchLabel row:1 column:1 columnSpan:3];
-    
-    [gridLayout addView:secondSwitch row:2 column:0];
-    [gridLayout addView:secondSwitchLabel row:2 column:1 columnSpan:3];
-    
-    [gridLayout addView:button1 row:3 column:0];
-    [gridLayout addView:button2 row:3 column:1];
-    [gridLayout addView:button3 row:3 column:2];
-    [gridLayout addView:button4 row:3 column:3];
-    
-    [gridLayout addView:switchesLeftButton row:4 column:0];
-    [gridLayout addView:switchesRightButton row:4 column:1];
-    
-    [gridLayout setBounds:[self.view bounds]];
+    [gridLayout setBounds:[self layoutBounds]];
     [gridLayout layoutViews];
 }
 
 - (void)viewDidUnload {
+    // Release the grid layout to release the retained subviews
     [self setGridLayout:nil];
-    
-    [self setTopLabel:nil];
-    [self setFirstSwitch:nil];
-    [self setFirstSwitchLabel:nil];
-    [self setSecondSwitch:nil];
-    [self setSecondSwitchLabel:nil];
-    [self setButton1:nil];
-    [self setButton2:nil];
-    [self setButton3:nil];
-    [self setButton4:nil];
-    [self setSwitchesLeftButton:nil];
-    [self setSwitchesRightButton:nil];
-    
     [super viewDidUnload];
 }
 
-- (void)animateLayout {
-    [UIView animateWithDuration:0.2f animations:^{
-        [gridLayout setBounds:[self.view bounds]];
+- (void)animateLayoutWithDuration:(NSTimeInterval)duration {
+    [UIView animateWithDuration:duration animations:^{
+        [gridLayout setBounds:[self layoutBounds]];
         [gridLayout layoutViews];        
     }];    
 }
@@ -82,62 +115,8 @@
     }
 }
 
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-    
-    [self animateLayout];
-}
-
-- (void)dealloc {
-    [gridLayout release];
-    
-    [topLabel release];
-    [firstSwitch release];
-    [firstSwitchLabel release];
-    [secondSwitch release];
-    [secondSwitchLabel release];
-    [button1 release];
-    [button2 release];
-    [button3 release];
-    [button4 release];
-    [switchesLeftButton release];
-    [switchesRightButton release];
-    
-    [super dealloc];
-}
-
-- (IBAction)switchesLeftButtonWasTapped:(id)sender {
-    [gridLayout removeView:firstSwitch];
-    [gridLayout removeView:firstSwitchLabel];
-    [gridLayout removeView:secondSwitch];
-    [gridLayout removeView:secondSwitchLabel];
-    
-    [gridLayout addView:firstSwitch row:1 column:0];
-    [gridLayout addView:firstSwitchLabel row:1 column:1 columnSpan:3];
-    firstSwitchLabel.textAlignment = UITextAlignmentLeft;
-    
-    [gridLayout addView:secondSwitch row:2 column:0];
-    [gridLayout addView:secondSwitchLabel row:2 column:1 columnSpan:3];
-    secondSwitchLabel.textAlignment = UITextAlignmentLeft;
-
-    [self animateLayout];
-}
-
-- (IBAction)switchesRightButtonWasTapped:(id)sender {
-    [gridLayout removeView:firstSwitch];
-    [gridLayout removeView:firstSwitchLabel];
-    [gridLayout removeView:secondSwitch];
-    [gridLayout removeView:secondSwitchLabel];
-    
-    [gridLayout addView:firstSwitch row:1 column:3];
-    [gridLayout addView:firstSwitchLabel row:1 column:0 columnSpan:3];
-    firstSwitchLabel.textAlignment = UITextAlignmentRight;
-    
-    [gridLayout addView:secondSwitch row:2 column:3];
-    [gridLayout addView:secondSwitchLabel row:2 column:0 columnSpan:3];
-    secondSwitchLabel.textAlignment = UITextAlignmentRight;
-    
-    [self animateLayout];
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [self animateLayoutWithDuration:duration];
 }
 
 @end
