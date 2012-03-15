@@ -2,9 +2,25 @@
 //  KJGridLayoutDemoTests.m
 //  KJGridLayoutDemoTests
 //
-//  Created by Kristopher Johnson on 3/13/12.
-//  Copyright (c) 2012 Kristopher Johnson 
+// Copyright (C) 2012 Kristopher Johnson
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "KJGridLayoutDemoTests.h"
 
@@ -171,6 +187,56 @@
     STAssertEquals(200.f, view1.center.y, nil);
     STAssertEquals(10.f, view1.frame.size.width, nil);
     STAssertEquals(20.f, view1.frame.size.height, nil);
+}
+
+- (void)testColumnSpacing {
+    [gridLayout setBounds:CGRectMake(0, 0, 430, 400)];
+    [gridLayout setColumnSpacing:10];
+    
+    UIView *view1 = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+    [gridLayout addView:view1 row:0 column:0];
+    
+    UIView *view2 = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+    [gridLayout addView:view2 row:0 column:1];
+    
+    UIView *view3 = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+    [gridLayout addView:view3 row:0 column:2 columnSpan:2];
+    
+    [gridLayout layoutViews];
+    
+    STAssertEquals(0.f, view1.frame.origin.x, nil);
+    STAssertEquals(100.f, view1.frame.size.width, nil);
+    
+    STAssertEquals(110.f, view2.frame.origin.x, nil);
+    STAssertEquals(100.f, view2.frame.size.width, nil);
+    
+    STAssertEquals(220.f, view3.frame.origin.x, nil);
+    STAssertEquals(210.f, view3.frame.size.width, nil);
+}
+
+- (void)testRowSpacing {
+    [gridLayout setBounds:CGRectMake(0, 0, 430, 540)];
+    [gridLayout setRowSpacing:10];
+    
+    UIView *view1 = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+    [gridLayout addView:view1 row:0 column:0];
+    
+    UIView *view2 = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+    [gridLayout addView:view2 row:1 rowSpan:3 column:0];
+    
+    UIView *view3 = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+    [gridLayout addView:view3 row:4 column:0];
+    
+    [gridLayout layoutViews];
+    
+    STAssertEquals(0.f, view1.frame.origin.y, nil);
+    STAssertEquals(100.f, view1.frame.size.height, nil);
+    
+    STAssertEquals(110.f, view2.frame.origin.y, nil);
+    STAssertEquals(320.f, view2.frame.size.height, nil);
+    
+    STAssertEquals(440.f, view3.frame.origin.y, nil);
+    STAssertEquals(100.f, view3.frame.size.height, nil);
 }
 
 @end

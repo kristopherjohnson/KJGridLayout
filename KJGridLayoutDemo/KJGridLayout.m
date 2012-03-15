@@ -2,9 +2,25 @@
 //  KJGridLayout.m
 //  KJGridLayoutDemo
 //
-//  Created by Kristopher Johnson on 3/14/12.
-//  Copyright (c) 2012 Kristopher Johnson 
+// Copyright (C) 2012 Kristopher Johnson
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "KJGridLayout.h"
 
@@ -52,6 +68,8 @@
 @implementation KJGridLayout
 
 @synthesize bounds;
+@synthesize columnSpacing;
+@synthesize rowSpacing;
 
 - (id)init {
     self = [super init];
@@ -187,19 +205,30 @@
         return;
     }
     
+    NSUInteger rowGapCount = rowCount - 1;
+    CGFloat totalRowGapSpace = rowGapCount * rowSpacing;
+    
+    NSUInteger columnGapCount = columnCount - 1;
+    CGFloat totalColumnGapSpace = columnGapCount * columnSpacing;
+    
     // Determine sizes of rows and columns
-    CGFloat rowHeight = bounds.size.height / rowCount;
-    CGFloat columnWidth = bounds.size.width / columnCount;
+    CGFloat rowHeight = (bounds.size.height - totalRowGapSpace) / rowCount;
+    CGFloat columnWidth = (bounds.size.width - totalColumnGapSpace) / columnCount;
     
     // Set frame of each view
     for (KJGridLayoutConstraint *constraint in constraints) {
         UIView *view = constraint.view;
         
+        NSUInteger columnIndex = constraint.columnIndex;
+        NSUInteger rowIndex = constraint.rowIndex;
+        NSUInteger columnSpan = constraint.columnSpan;
+        NSUInteger rowSpan = constraint.rowSpan;
+        
         // Determine rectangle for this view within grid
-        CGFloat originX = bounds.origin.x + constraint.columnIndex * columnWidth;
-        CGFloat originY = bounds.origin.y + constraint.rowIndex * rowHeight;
-        CGFloat width = columnWidth * constraint.columnSpan;
-        CGFloat height = rowHeight * constraint.rowSpan;
+        CGFloat originX = bounds.origin.x + columnIndex * (columnWidth + columnSpacing);
+        CGFloat originY = bounds.origin.y + rowIndex * (rowHeight + rowSpacing);
+        CGFloat width = columnWidth * columnSpan + (columnSpan - 1) * columnSpacing;
+        CGFloat height = rowHeight * rowSpan + (rowSpan - 1) * rowSpacing;
         
         // Determine how to fit the view within the rectangle
         
