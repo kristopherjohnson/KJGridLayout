@@ -7,6 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E3CC6521512B07000ECF7E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6A15109F61000291B3 /* UIKit.framework */; };
+		4E3CC6531512B07000ECF7E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6C15109F61000291B3 /* Foundation.framework */; };
+		4E3CC6541512B07000ECF7E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6E15109F61000291B3 /* CoreGraphics.framework */; };
+		4E3CC65A1512B07000ECF7E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CC6581512B07000ECF7E8 /* InfoPlist.strings */; };
+		4E3CC65C1512B07000ECF7E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CC65B1512B07000ECF7E8 /* main.m */; };
+		4E3CC6601512B07000ECF7E8 /* KJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CC65F1512B07000ECF7E8 /* KJAppDelegate.m */; };
+		4E3CC6631512B07000ECF7E8 /* KJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CC6621512B07000ECF7E8 /* KJViewController.m */; };
+		4E3CC6661512B07100ECF7E8 /* KJViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CC6641512B07100ECF7E8 /* KJViewController_iPhone.xib */; };
+		4E3CC6691512B07100ECF7E8 /* KJViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CC6671512B07100ECF7E8 /* KJViewController_iPad.xib */; };
+		4E3CC6731512B10800ECF7E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6C15109F61000291B3 /* Foundation.framework */; };
+		4E3CC6791512B10800ECF7E8 /* KJGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CC6781512B10800ECF7E8 /* KJGridLayout.m */; };
+		4E3CC6801512B10800ECF7E8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB8B15109F61000291B3 /* SenTestingKit.framework */; };
+		4E3CC6811512B10800ECF7E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6A15109F61000291B3 /* UIKit.framework */; };
+		4E3CC6821512B10800ECF7E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6C15109F61000291B3 /* Foundation.framework */; };
+		4E3CC6851512B10800ECF7E8 /* libKJGridLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3CC6721512B10800ECF7E8 /* libKJGridLayout.a */; };
+		4E3CC68B1512B10900ECF7E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CC6891512B10900ECF7E8 /* InfoPlist.strings */; };
+		4E3CC68E1512B10900ECF7E8 /* KJGridLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CC68D1512B10900ECF7E8 /* KJGridLayoutTests.m */; };
+		4E3CC6951512B1C500ECF7E8 /* libKJGridLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3CC6721512B10800ECF7E8 /* libKJGridLayout.a */; };
+		4E3CC6961512B21B00ECF7E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6E15109F61000291B3 /* CoreGraphics.framework */; };
+		4E3CC6991512B30400ECF7E8 /* KJGridLayoutViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CC6981512B30400ECF7E8 /* KJGridLayoutViewTests.m */; };
+		4E3CC69C1512B48000ECF7E8 /* KJGridLayoutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E3CC69A1512B48000ECF7E8 /* KJGridLayoutView.h */; };
+		4E3CC69D1512B48000ECF7E8 /* KJGridLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CC69B1512B48000ECF7E8 /* KJGridLayoutView.m */; };
+		4E3CC69E1512BA1D00ECF7E8 /* libKJGridLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3CC6721512B10800ECF7E8 /* libKJGridLayout.a */; };
 		4E59AB6B15109F61000291B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6A15109F61000291B3 /* UIKit.framework */; };
 		4E59AB6D15109F61000291B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6C15109F61000291B3 /* Foundation.framework */; };
 		4E59AB6F15109F61000291B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6E15109F61000291B3 /* CoreGraphics.framework */; };
@@ -19,14 +42,17 @@
 		4E59AB8C15109F61000291B3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB8B15109F61000291B3 /* SenTestingKit.framework */; };
 		4E59AB8D15109F61000291B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6A15109F61000291B3 /* UIKit.framework */; };
 		4E59AB8E15109F61000291B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6C15109F61000291B3 /* Foundation.framework */; };
-		4E59AB9615109F61000291B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E59AB9415109F61000291B3 /* InfoPlist.strings */; };
-		4E59AB9915109F61000291B3 /* KJGridLayoutDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E59AB9815109F61000291B3 /* KJGridLayoutDemoTests.m */; };
-		4E59ABA415109FC1000291B3 /* KJGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E59ABA315109FC1000291B3 /* KJGridLayout.m */; };
-		4E59ABA515109FC1000291B3 /* KJGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E59ABA315109FC1000291B3 /* KJGridLayout.m */; };
 		4E59ABA61510A0DE000291B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E59AB6E15109F61000291B3 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4E3CC6831512B10800ECF7E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E59AB5D15109F61000291B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E3CC6711512B10800ECF7E8;
+			remoteInfo = KJGridLayout;
+		};
 		4E59AB8F15109F61000291B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4E59AB5D15109F61000291B3 /* Project object */;
@@ -37,6 +63,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E3CC6501512B07000ECF7E8 /* KJGridLayoutViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KJGridLayoutViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E3CC6571512B07000ECF7E8 /* KJGridLayoutViewDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KJGridLayoutViewDemo-Info.plist"; sourceTree = "<group>"; };
+		4E3CC6591512B07000ECF7E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4E3CC65B1512B07000ECF7E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4E3CC65D1512B07000ECF7E8 /* KJGridLayoutViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KJGridLayoutViewDemo-Prefix.pch"; sourceTree = "<group>"; };
+		4E3CC65E1512B07000ECF7E8 /* KJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJAppDelegate.h; sourceTree = "<group>"; };
+		4E3CC65F1512B07000ECF7E8 /* KJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJAppDelegate.m; sourceTree = "<group>"; };
+		4E3CC6611512B07000ECF7E8 /* KJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJViewController.h; sourceTree = "<group>"; };
+		4E3CC6621512B07000ECF7E8 /* KJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJViewController.m; sourceTree = "<group>"; };
+		4E3CC6651512B07100ECF7E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KJViewController_iPhone.xib; sourceTree = "<group>"; };
+		4E3CC6681512B07100ECF7E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KJViewController_iPad.xib; sourceTree = "<group>"; };
+		4E3CC6721512B10800ECF7E8 /* libKJGridLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKJGridLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E3CC6761512B10800ECF7E8 /* KJGridLayout-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KJGridLayout-Prefix.pch"; sourceTree = "<group>"; };
+		4E3CC6771512B10800ECF7E8 /* KJGridLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJGridLayout.h; sourceTree = "<group>"; };
+		4E3CC6781512B10800ECF7E8 /* KJGridLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJGridLayout.m; sourceTree = "<group>"; };
+		4E3CC67F1512B10800ECF7E8 /* KJGridLayoutTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KJGridLayoutTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E3CC6881512B10800ECF7E8 /* KJGridLayoutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KJGridLayoutTests-Info.plist"; sourceTree = "<group>"; };
+		4E3CC68A1512B10900ECF7E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4E3CC68C1512B10900ECF7E8 /* KJGridLayoutTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJGridLayoutTests.h; sourceTree = "<group>"; };
+		4E3CC68D1512B10900ECF7E8 /* KJGridLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJGridLayoutTests.m; sourceTree = "<group>"; };
+		4E3CC6971512B30400ECF7E8 /* KJGridLayoutViewTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJGridLayoutViewTests.h; sourceTree = "<group>"; };
+		4E3CC6981512B30400ECF7E8 /* KJGridLayoutViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJGridLayoutViewTests.m; sourceTree = "<group>"; };
+		4E3CC69A1512B48000ECF7E8 /* KJGridLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJGridLayoutView.h; sourceTree = "<group>"; };
+		4E3CC69B1512B48000ECF7E8 /* KJGridLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJGridLayoutView.m; sourceTree = "<group>"; };
+		4E3CC69F1512BA7F00ECF7E8 /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		4E59AB6615109F61000291B3 /* KJGridLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KJGridLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E59AB6A15109F61000291B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4E59AB6C15109F61000291B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,19 +104,45 @@
 		4E59AB8315109F61000291B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KJViewController_iPad.xib; sourceTree = "<group>"; };
 		4E59AB8A15109F61000291B3 /* KJGridLayoutDemoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KJGridLayoutDemoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E59AB8B15109F61000291B3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		4E59AB9315109F61000291B3 /* KJGridLayoutDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KJGridLayoutDemoTests-Info.plist"; sourceTree = "<group>"; };
-		4E59AB9515109F61000291B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4E59AB9715109F61000291B3 /* KJGridLayoutDemoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJGridLayoutDemoTests.h; sourceTree = "<group>"; };
-		4E59AB9815109F61000291B3 /* KJGridLayoutDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJGridLayoutDemoTests.m; sourceTree = "<group>"; };
-		4E59ABA215109FC1000291B3 /* KJGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJGridLayout.h; sourceTree = "<group>"; };
-		4E59ABA315109FC1000291B3 /* KJGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJGridLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4E3CC64D1512B07000ECF7E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3CC69E1512BA1D00ECF7E8 /* libKJGridLayout.a in Frameworks */,
+				4E3CC6521512B07000ECF7E8 /* UIKit.framework in Frameworks */,
+				4E3CC6531512B07000ECF7E8 /* Foundation.framework in Frameworks */,
+				4E3CC6541512B07000ECF7E8 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E3CC66F1512B10800ECF7E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3CC6731512B10800ECF7E8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E3CC67B1512B10800ECF7E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3CC6801512B10800ECF7E8 /* SenTestingKit.framework in Frameworks */,
+				4E3CC6811512B10800ECF7E8 /* UIKit.framework in Frameworks */,
+				4E3CC6821512B10800ECF7E8 /* Foundation.framework in Frameworks */,
+				4E3CC6851512B10800ECF7E8 /* libKJGridLayout.a in Frameworks */,
+				4E3CC6961512B21B00ECF7E8 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4E59AB6315109F61000291B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3CC6951512B1C500ECF7E8 /* libKJGridLayout.a in Frameworks */,
 				4E59AB6B15109F61000291B3 /* UIKit.framework in Frameworks */,
 				4E59AB6D15109F61000291B3 /* Foundation.framework in Frameworks */,
 				4E59AB6F15109F61000291B3 /* CoreGraphics.framework in Frameworks */,
@@ -86,11 +163,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E3CC6551512B07000ECF7E8 /* KJGridLayoutViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4E3CC65E1512B07000ECF7E8 /* KJAppDelegate.h */,
+				4E3CC65F1512B07000ECF7E8 /* KJAppDelegate.m */,
+				4E3CC6611512B07000ECF7E8 /* KJViewController.h */,
+				4E3CC6621512B07000ECF7E8 /* KJViewController.m */,
+				4E3CC6641512B07100ECF7E8 /* KJViewController_iPhone.xib */,
+				4E3CC6671512B07100ECF7E8 /* KJViewController_iPad.xib */,
+				4E3CC6561512B07000ECF7E8 /* Supporting Files */,
+			);
+			path = KJGridLayoutViewDemo;
+			sourceTree = "<group>";
+		};
+		4E3CC6561512B07000ECF7E8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E3CC6571512B07000ECF7E8 /* KJGridLayoutViewDemo-Info.plist */,
+				4E3CC6581512B07000ECF7E8 /* InfoPlist.strings */,
+				4E3CC65B1512B07000ECF7E8 /* main.m */,
+				4E3CC65D1512B07000ECF7E8 /* KJGridLayoutViewDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4E3CC6741512B10800ECF7E8 /* KJGridLayout */ = {
+			isa = PBXGroup;
+			children = (
+				4E3CC6771512B10800ECF7E8 /* KJGridLayout.h */,
+				4E3CC6781512B10800ECF7E8 /* KJGridLayout.m */,
+				4E3CC69A1512B48000ECF7E8 /* KJGridLayoutView.h */,
+				4E3CC69B1512B48000ECF7E8 /* KJGridLayoutView.m */,
+				4E3CC6751512B10800ECF7E8 /* Supporting Files */,
+			);
+			path = KJGridLayout;
+			sourceTree = "<group>";
+		};
+		4E3CC6751512B10800ECF7E8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E3CC6761512B10800ECF7E8 /* KJGridLayout-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4E3CC6861512B10800ECF7E8 /* KJGridLayoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				4E3CC68C1512B10900ECF7E8 /* KJGridLayoutTests.h */,
+				4E3CC68D1512B10900ECF7E8 /* KJGridLayoutTests.m */,
+				4E3CC6971512B30400ECF7E8 /* KJGridLayoutViewTests.h */,
+				4E3CC6981512B30400ECF7E8 /* KJGridLayoutViewTests.m */,
+				4E3CC6871512B10800ECF7E8 /* Supporting Files */,
+			);
+			path = KJGridLayoutTests;
+			sourceTree = "<group>";
+		};
+		4E3CC6871512B10800ECF7E8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E3CC6881512B10800ECF7E8 /* KJGridLayoutTests-Info.plist */,
+				4E3CC6891512B10900ECF7E8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		4E59AB5B15109F61000291B3 = {
 			isa = PBXGroup;
 			children = (
+				4E3CC69F1512BA7F00ECF7E8 /* README.markdown */,
+				4E3CC6741512B10800ECF7E8 /* KJGridLayout */,
+				4E3CC6861512B10800ECF7E8 /* KJGridLayoutTests */,
 				4E59AB7015109F61000291B3 /* KJGridLayoutDemo */,
-				4E59AB9115109F61000291B3 /* KJGridLayoutDemoTests */,
+				4E3CC6551512B07000ECF7E8 /* KJGridLayoutViewDemo */,
 				4E59AB6915109F61000291B3 /* Frameworks */,
 				4E59AB6715109F61000291B3 /* Products */,
 			);
@@ -101,6 +247,9 @@
 			children = (
 				4E59AB6615109F61000291B3 /* KJGridLayoutDemo.app */,
 				4E59AB8A15109F61000291B3 /* KJGridLayoutDemoTests.octest */,
+				4E3CC6501512B07000ECF7E8 /* KJGridLayoutViewDemo.app */,
+				4E3CC6721512B10800ECF7E8 /* libKJGridLayout.a */,
+				4E3CC67F1512B10800ECF7E8 /* KJGridLayoutTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,8 +275,6 @@
 				4E59AB7F15109F61000291B3 /* KJViewController_iPhone.xib */,
 				4E59AB8215109F61000291B3 /* KJViewController_iPad.xib */,
 				4E59AB7115109F61000291B3 /* Supporting Files */,
-				4E59ABA215109FC1000291B3 /* KJGridLayout.h */,
-				4E59ABA315109FC1000291B3 /* KJGridLayout.m */,
 			);
 			path = KJGridLayoutDemo;
 			sourceTree = "<group>";
@@ -143,28 +290,73 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4E59AB9115109F61000291B3 /* KJGridLayoutDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				4E59AB9715109F61000291B3 /* KJGridLayoutDemoTests.h */,
-				4E59AB9815109F61000291B3 /* KJGridLayoutDemoTests.m */,
-				4E59AB9215109F61000291B3 /* Supporting Files */,
-			);
-			path = KJGridLayoutDemoTests;
-			sourceTree = "<group>";
-		};
-		4E59AB9215109F61000291B3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4E59AB9315109F61000291B3 /* KJGridLayoutDemoTests-Info.plist */,
-				4E59AB9415109F61000291B3 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		4E3CC6701512B10800ECF7E8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3CC69C1512B48000ECF7E8 /* KJGridLayoutView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		4E3CC64F1512B07000ECF7E8 /* KJGridLayoutViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E3CC66C1512B07100ECF7E8 /* Build configuration list for PBXNativeTarget "KJGridLayoutViewDemo" */;
+			buildPhases = (
+				4E3CC64C1512B07000ECF7E8 /* Sources */,
+				4E3CC64D1512B07000ECF7E8 /* Frameworks */,
+				4E3CC64E1512B07000ECF7E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KJGridLayoutViewDemo;
+			productName = KJGridLayoutViewDemo;
+			productReference = 4E3CC6501512B07000ECF7E8 /* KJGridLayoutViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4E3CC6711512B10800ECF7E8 /* KJGridLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E3CC68F1512B10900ECF7E8 /* Build configuration list for PBXNativeTarget "KJGridLayout" */;
+			buildPhases = (
+				4E3CC66E1512B10800ECF7E8 /* Sources */,
+				4E3CC66F1512B10800ECF7E8 /* Frameworks */,
+				4E3CC6701512B10800ECF7E8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KJGridLayout;
+			productName = KJGridLayout;
+			productReference = 4E3CC6721512B10800ECF7E8 /* libKJGridLayout.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4E3CC67E1512B10800ECF7E8 /* KJGridLayoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E3CC6921512B10900ECF7E8 /* Build configuration list for PBXNativeTarget "KJGridLayoutTests" */;
+			buildPhases = (
+				4E3CC67A1512B10800ECF7E8 /* Sources */,
+				4E3CC67B1512B10800ECF7E8 /* Frameworks */,
+				4E3CC67C1512B10800ECF7E8 /* Resources */,
+				4E3CC67D1512B10800ECF7E8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E3CC6841512B10800ECF7E8 /* PBXTargetDependency */,
+			);
+			name = KJGridLayoutTests;
+			productName = KJGridLayoutTests;
+			productReference = 4E3CC67F1512B10800ECF7E8 /* KJGridLayoutTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		4E59AB6515109F61000291B3 /* KJGridLayoutDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E59AB9C15109F61000291B3 /* Build configuration list for PBXNativeTarget "KJGridLayoutDemo" */;
@@ -225,11 +417,32 @@
 			targets = (
 				4E59AB6515109F61000291B3 /* KJGridLayoutDemo */,
 				4E59AB8915109F61000291B3 /* KJGridLayoutDemoTests */,
+				4E3CC64F1512B07000ECF7E8 /* KJGridLayoutViewDemo */,
+				4E3CC6711512B10800ECF7E8 /* KJGridLayout */,
+				4E3CC67E1512B10800ECF7E8 /* KJGridLayoutTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4E3CC64E1512B07000ECF7E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3CC65A1512B07000ECF7E8 /* InfoPlist.strings in Resources */,
+				4E3CC6661512B07100ECF7E8 /* KJViewController_iPhone.xib in Resources */,
+				4E3CC6691512B07100ECF7E8 /* KJViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E3CC67C1512B10800ECF7E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3CC68B1512B10900ECF7E8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4E59AB6415109F61000291B3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,13 +457,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E59AB9615109F61000291B3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4E3CC67D1512B10800ECF7E8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 		4E59AB8815109F61000291B3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,6 +492,34 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4E3CC64C1512B07000ECF7E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3CC65C1512B07000ECF7E8 /* main.m in Sources */,
+				4E3CC6601512B07000ECF7E8 /* KJAppDelegate.m in Sources */,
+				4E3CC6631512B07000ECF7E8 /* KJViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E3CC66E1512B10800ECF7E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3CC6791512B10800ECF7E8 /* KJGridLayout.m in Sources */,
+				4E3CC69D1512B48000ECF7E8 /* KJGridLayoutView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E3CC67A1512B10800ECF7E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3CC68E1512B10900ECF7E8 /* KJGridLayoutTests.m in Sources */,
+				4E3CC6991512B30400ECF7E8 /* KJGridLayoutViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4E59AB6215109F61000291B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,7 +527,6 @@
 				4E59AB7715109F61000291B3 /* main.m in Sources */,
 				4E59AB7B15109F61000291B3 /* KJAppDelegate.m in Sources */,
 				4E59AB7E15109F61000291B3 /* KJViewController.m in Sources */,
-				4E59ABA415109FC1000291B3 /* KJGridLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,14 +534,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E59AB9915109F61000291B3 /* KJGridLayoutDemoTests.m in Sources */,
-				4E59ABA515109FC1000291B3 /* KJGridLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4E3CC6841512B10800ECF7E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E3CC6711512B10800ECF7E8 /* KJGridLayout */;
+			targetProxy = 4E3CC6831512B10800ECF7E8 /* PBXContainerItemProxy */;
+		};
 		4E59AB9015109F61000291B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4E59AB6515109F61000291B3 /* KJGridLayoutDemo */;
@@ -298,6 +553,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4E3CC6581512B07000ECF7E8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E3CC6591512B07000ECF7E8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4E3CC6641512B07100ECF7E8 /* KJViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E3CC6651512B07100ECF7E8 /* en */,
+			);
+			name = KJViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		4E3CC6671512B07100ECF7E8 /* KJViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E3CC6681512B07100ECF7E8 /* en */,
+			);
+			name = KJViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		4E3CC6891512B10900ECF7E8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E3CC68A1512B10900ECF7E8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		4E59AB7315109F61000291B3 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -322,17 +609,93 @@
 			name = KJViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
-		4E59AB9415109F61000291B3 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4E59AB9515109F61000291B3 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4E3CC66A1512B07100ECF7E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KJGridLayoutViewDemo/KJGridLayoutViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "KJGridLayoutViewDemo/KJGridLayoutViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4E3CC66B1512B07100ECF7E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KJGridLayoutViewDemo/KJGridLayoutViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "KJGridLayoutViewDemo/KJGridLayoutViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4E3CC6901512B10900ECF7E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/KJGridLayout.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KJGridLayout/KJGridLayout-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4E3CC6911512B10900ECF7E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/KJGridLayout.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KJGridLayout/KJGridLayout-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4E3CC6931512B10900ECF7E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KJGridLayout/KJGridLayout-Prefix.pch";
+				INFOPLIST_FILE = "KJGridLayoutTests/KJGridLayoutTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		4E3CC6941512B10900ECF7E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KJGridLayout/KJGridLayout-Prefix.pch";
+				INFOPLIST_FILE = "KJGridLayoutTests/KJGridLayoutTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		4E59AB9A15109F61000291B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -439,6 +802,30 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4E3CC66C1512B07100ECF7E8 /* Build configuration list for PBXNativeTarget "KJGridLayoutViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E3CC66A1512B07100ECF7E8 /* Debug */,
+				4E3CC66B1512B07100ECF7E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4E3CC68F1512B10900ECF7E8 /* Build configuration list for PBXNativeTarget "KJGridLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E3CC6901512B10900ECF7E8 /* Debug */,
+				4E3CC6911512B10900ECF7E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4E3CC6921512B10900ECF7E8 /* Build configuration list for PBXNativeTarget "KJGridLayoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E3CC6931512B10900ECF7E8 /* Debug */,
+				4E3CC6941512B10900ECF7E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		4E59AB6015109F61000291B3 /* Build configuration list for PBXProject "KJGridLayoutDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -455,6 +842,7 @@
 				4E59AB9E15109F61000291B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E59AB9F15109F61000291B3 /* Build configuration list for PBXNativeTarget "KJGridLayoutDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +851,7 @@
 				4E59ABA115109F61000291B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

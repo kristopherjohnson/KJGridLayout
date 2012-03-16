@@ -1,6 +1,6 @@
 //
-//  KJGridLayoutDemoTests.h
-//  KJGridLayoutDemoTests
+//  KJGridLayoutTests.h
+//  KJGridLayoutTests
 //
 // Copyright (C) 2012 Kristopher Johnson
 // 
@@ -25,7 +25,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "KJGridLayout.h"
 
-@interface KJGridLayoutDemoTests : SenTestCase {
+@interface KJGridLayoutTests : SenTestCase {
     KJGridLayout *gridLayout;
 }
 

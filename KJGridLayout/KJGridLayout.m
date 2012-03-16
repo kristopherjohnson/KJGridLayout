@@ -235,7 +235,7 @@
         NSUInteger options = constraint.options;
         CGRect oldFrame = view.frame;
         CGRect newFrame;
-                
+        
         if ((options & KJGridLayoutFixedWidth) != 0) {
             // Center horizontally, maintaining the original width
             CGFloat centerX = (originX + width) / 2;

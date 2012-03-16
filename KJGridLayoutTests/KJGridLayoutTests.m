@@ -22,9 +22,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "KJGridLayoutDemoTests.h"
+#import "KJGridLayoutTests.h"
 
-@implementation KJGridLayoutDemoTests
+@implementation KJGridLayoutTests
 
 - (void)setUp {
     [super setUp];
