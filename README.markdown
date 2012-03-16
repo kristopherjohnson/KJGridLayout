@@ -1,12 +1,23 @@
-# KJGridLayout
+# KJGridLayout and KJGridLayoutView
 
-KJGridLayout is a simple grid layout manager for views in an iOS application.
+`KJGridLayout` is a simple grid layout manager for views in an iOS application.
 
 It can be used in a UIViewController subclass to arrange views, or can be used in the implementation of `-[UIView layoutSubviews]` in a UIView subclass.
 
-## Basic Usage
+`KJGridLayoutView` is a UIView subclass which uses a `KJGridLayout` in its `-layoutSubviews` implementation. It allows one to add a subview at a particular grid position, and the grid's layout will automatically be updated whenever the view is resized or when a new subview is added.
 
-To use it in your application, copy [`KJGridLayout.h`](https://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayoutDemo/KJGridLayout.h) and [`KJGridLayout.m`](https://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayoutDemo/KJGridLayout.m) into your project.
+## Contents
+
+The Xcode project contains the following targets:
+
+- **KJGridLayout** - a static library containing the `KJGridLayout` and `KJGridLayoutView` classes. You can copy this library into your own projects, or just copy the `.h` and `.m` files into your project.
+- **KJGridLayoutTests** - unit tests for the `KJGridLayout` library. To run the tests, select the *KJGridLayout* scheme in Xcode and run the *Product > Test* command
+- **KJGridLayoutDemo** - a simple app that demonstrates usage of the `KJGridLayout` class
+- **KJGridLayoutViewDemo** - a simple app that demonstrates usage of the `KJGridLayoutView` class
+
+## Basic Usage of KJGridLayout
+
+To use `KJGridLayout` in your application, copy [`KJGridLayout.h`](http://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayout/KJGridLayout.h) and [`KJGridLayout.m`](http://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayout/KJGridLayout.m) into your project (or copy the entire KJGridLayout library target).
 
 Create an instance of `KJGridLayout` by calling `[[KJGridLayout alloc] init]`.
 
@@ -20,7 +31,7 @@ Finally, call `-layoutViews` to perform the layout operation.  This will call `-
 
 Use `-removeView:` or `-removeAllViews` if you want to remove views from the layout.  If you want to change the layout for an element (for example, moving an element from one column to another), you must remove it and then call one of the `-addView:...` methods to put it in the new place.
 
-## Simple Example
+## Simple Example of KJGridLayout
 
     // @property (nonatomic, retain) KJGridLayout *gridLayout;
     @synthesize gridLayout;
@@ -75,7 +86,19 @@ Use `-removeView:` or `-removeAllViews` if you want to remove views from the lay
         }];    
     }
 
-See the included [`KJGridLayoutDemo`](https://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayoutDemo/KJViewController.m) application for a more complete example.
+See the included [`KJGridLayoutDemo`](http://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayoutDemo/KJViewController.m) application for a more complete example.
+
+## Usage of KJGridLayoutView
+
+To use `KJGridLayoutView` in your application, copy [`KJGridLayout.h`](http://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayout/KJGridLayout.h), [`KJGridLayout.m`](http://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayout/KJGridLayout.m), [`KJGridLayoutView.h`](http://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayout/KJGridLayoutView.h) and [`KJGridLayoutView.m`](http://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayout/KJGridLayoutView.m) into your project (or copy the entire KJGridLayout library target).
+
+Using `KJGridLayoutView` is similar to using `KJGridLayout`, but instead of calling `-addView:row:rowSpan:column:columnSpan:options:`, you call `-addSubview:row:rowSpan:column:columnSpan:options:`, which both adds the view as a subview and sets its grid-layout parameters.
+
+You can also use `-[UIView addSubview:]` with `KJGridLayoutView`. Subviews added with that method will not participate in grid layout.
+
+If you set the views `autoresizingMask` appropriately, then the view's grid-layout code will be called automatically during autorotation or any other events that cause the view's size to change.
+
+See [`KJGridLayoutViewDemo`](http://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayoutViewDemo/KJViewController.m) for a complete example.
 
 ## LICENSE
 
