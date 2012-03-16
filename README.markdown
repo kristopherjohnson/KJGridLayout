@@ -96,7 +96,7 @@ Using `KJGridLayoutView` is similar to using `KJGridLayout`, but instead of call
 
 You can also use `-[UIView addSubview:]` with `KJGridLayoutView`. Subviews added with that method will not participate in grid layout.
 
-If you set the views `autoresizingMask` appropriately, then the view's grid-layout code will be called automatically during autorotation or any other events that cause the view's size to change.
+If you set the grid-layout view's `autoresizingMask` appropriately, then its grid-layout code will be called automatically during autorotation or any other events that cause the view's size to change.
 
 See [`KJGridLayoutViewDemo`](http://github.com/kristopherjohnson/KJGridLayout/blob/master/KJGridLayoutViewDemo/KJViewController.m) for a complete example.
 
