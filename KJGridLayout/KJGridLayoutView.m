@@ -26,6 +26,11 @@
 
 @implementation KJGridLayoutView
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    _gridLayout = [[KJGridLayout alloc] init];
+}
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {

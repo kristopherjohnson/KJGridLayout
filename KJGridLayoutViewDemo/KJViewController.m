@@ -95,12 +95,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // The KJGridLayoutView class is in a library, so we have to have some direct
+    // reference to it or the linker won't include it in the executable.
+    // (Alternatively, we could add "-all_load -ObjC" to the linker settings.)
+    NSLog(@"Using class %@", [KJGridLayoutView description]);
+    
+#if 0 
+    // If we wanted to create the gridLayoutView programmatically, rather than
+    // loading from the NIB, here's how we'd do it
     CGRect gridLayoutViewBounds = CGRectInset(self.view.bounds, 8, 8);
     gridLayoutView = [[KJGridLayoutView alloc] initWithFrame:gridLayoutViewBounds];
-    
-    // Put some empty space between the subviews
-    [gridLayoutView setRowSpacing:4];
-    [gridLayoutView setColumnSpacing:4];
     
     // Give the layout view a distinctive background color so we can see it
     gridLayoutView.backgroundColor = [UIColor greenColor];
@@ -108,6 +112,11 @@
     // Let the view take care of resizing itself upon autorotation
     gridLayoutView.autoresizingMask = UIViewAutoresizingFlexibleWidth |
                                       UIViewAutoresizingFlexibleHeight;
+#endif
+    
+    // Put some empty space between the subviews
+    [gridLayoutView setRowSpacing:4];
+    [gridLayoutView setColumnSpacing:4];
     
     [self.view addSubview:gridLayoutView];
     

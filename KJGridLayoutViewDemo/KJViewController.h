@@ -26,6 +26,6 @@
 
 @interface KJViewController : UIViewController
 
-@property (nonatomic, retain) KJGridLayoutView *gridLayoutView;
+@property (nonatomic, retain) IBOutlet KJGridLayoutView *gridLayoutView;
 
 @end
