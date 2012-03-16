@@ -87,7 +87,6 @@
     label.lineBreakMode = UILineBreakModeWordWrap;
     label.textAlignment = UITextAlignmentCenter;
     label.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:label];
     [gridLayoutView addSubview:label row:0 column:0 columnSpan:2];
     [label release];
 }
@@ -112,13 +111,13 @@
     // Let the view take care of resizing itself upon autorotation
     gridLayoutView.autoresizingMask = UIViewAutoresizingFlexibleWidth |
                                       UIViewAutoresizingFlexibleHeight;
+    
+    [self.view addSubview:gridLayoutView];
 #endif
     
     // Put some empty space between the subviews
     [gridLayoutView setRowSpacing:4];
     [gridLayoutView setColumnSpacing:4];
-    
-    [self.view addSubview:gridLayoutView];
     
     [self addKeypadButtonsToGridLayoutView];
 }
