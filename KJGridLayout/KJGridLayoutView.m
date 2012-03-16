@@ -26,21 +26,25 @@
 
 @implementation KJGridLayoutView
 
+- (void)doCommonInitialization {
+    _gridLayout = [[KJGridLayout alloc] init];    
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _gridLayout = [[KJGridLayout alloc] init];
+    [self doCommonInitialization];
 }
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _gridLayout = [[KJGridLayout alloc] init];
+        [self doCommonInitialization];
     }
     return self;
 }
 
 - (void)dealloc {
-    // Note: the "_gridLayout = nil;" is necessary here, to prevent dangling
+    // Note: the "_gridLayout = nil;" is necessary here to prevent dangling
     // reference from being accessed by -willRemoveSubview, which will be
     // called during [super dealloc];
     [_gridLayout release];
